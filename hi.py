@@ -553,5 +553,6 @@
 # s.sort(key=len)
 # print(s)
 
-print("Hello")
+# print("Hello")
 
+print("Проверка репозитория")
