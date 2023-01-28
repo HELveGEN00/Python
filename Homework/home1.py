@@ -86,12 +86,48 @@ import random
 #     if a[i-1] < a[i]:
 #         print(a[i], end=" ")
 
-# spisok 3
+# # spisok 3
+#
+# a = [1, 3, 5, 6, 2, 4, 6, 1, 2, 7]
+# c = []
+# for i in range(len(a)):
+#     if a.count(a[i]) == 1:
+#         c.append(a[i])
+# print(a)
+# print(c)
 
-a = [1, 3, 5, 6, 2, 4, 6, 1, 2, 7]
-c = []
-for i in range(len(a)):
-    if a.count(a[i]) == 1:
-        c.append(a[i])
-print(a)
-print(c)
+# home massiv
+# a = [int(input("Введите элемент массива = ")) for i in range(int(input("Введите длину списка = ")))]
+# b = []
+# for i in range(len(a)):
+#     if a[i] > 0:
+#         b.append(a[i])
+# maximum = max(b)
+#
+# print("Целый список элементов", a)
+# print("Положительные элементы", b)
+# print("Наибольший элемент положительного массива = ", maximum)
+
+# massiv 2
+
+# print("Введите элементы списка: ")
+# a = [int(input("-> ")) for i in range(int(input("n = ")))]
+# print("Введите индекс: ")
+# k = int(input("k: "))
+# print("Введите значение: ")
+# num = int(input("c: "))
+# a.insert(k, num)
+# print(a)
+
+# massiv 3
+# print("Введите элементы списка: ")
+# a = [int(input("-> ")) for i in range(int(input("n = ")))]
+# print("Введите число: ")
+# ch = int(input("ch = "))
+# for i in range(len(a)):
+#     if a[i] == ch:
+#         print("Число присутствует в списке")
+#         break
+#     else:
+#         print("Число отсутствует в списке")
+#         break
