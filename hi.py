@@ -557,8 +557,512 @@
 
 # print("Проверка репозитория")
 
-print("Вносим изменения в клона")
+# print("Вносим изменения в клона")
+#
+# print("Hello")
+#
+# print("Одна строчка)")
 
-print("Hello")
+# import math
+#
+#
+# num1 = math.sqrt(4)
+# num2 = math.ceil(3.2)
+# num3 = math.floor(3.8)
+# num4 = math.pi
+#
+# print(num1)
+# print(num2)
+# print(num3)
+# print(num4)
+#
+# print(dir(math))
 
-print("Одна строчка)")
+# from math import sqrt, floor
+#
+# num1 = sqrt(4)
+# num3 = floor(3.8)
+# print(num1)
+# print(num3)
+#
+# from math import *
+#
+# num1 = sqrt(4)
+# num3 = floor(3.8)
+# print(num1)
+# print(num3)
+
+# длина окружности, с округлением до сотых
+# from math import pi
+#
+# r = int(input("Введите радиус окружности\nr = "))
+# lean = round(r * pi * 2, 2)
+# print(lean)
+
+# import time
+# import locale
+#
+# locale.setlocale(locale.LC_ALL, "ru")
+
+# print(dir(time))
+
+# s = time.time()
+# print(s)
+# b = 464988129
+# local = time.ctime(b)
+# print(local)
+#
+# res = time.localtime()
+# print(res)
+# print(res.tm_mday, ".0", res.tm_mon, ".", res.tm_year, sep="")
+#
+# print(time.strftime("%d.%m.%Y"))
+# print(time.strftime("Сегодня: %B %d (%A), %Y.", time.localtime(b)))
+
+# pause = 5
+# print("Программа запущена")
+# time.sleep(pause)
+# print("Программа прекращена")
+
+# text = input("Название напоминания: ")
+# t = float(input("Через сколько минут: "))
+# t = t * 60
+# time.sleep(t)
+# print(text)
+
+# start = time.time()
+# time.sleep(5)
+# finish = time.monotonic()  # убирает погрешность
+# res = finish - start
+# print(res)
+
+
+# def hello(name):
+#     print("Hello", name)
+#
+#
+# hello("Vladimir")
+
+# def get_sum(a, b):
+#     print("Сумма:")
+#     return a + b
+#
+#
+# x = 2
+# y = 5
+# res = get_sum(x, y)
+# # get_sum("2", "5")
+# print(res)
+
+# def symbol(count, a, b):
+#     for i in range(count):
+#         if i % 2 == 0:
+#             print(a, end="")
+#         else:
+#             print(b, end="")
+#     print()
+
+
+# def symbol(count, a, b, ):
+#     for i in range(count):
+#         x = a if i % 2 else b
+#         print(x, end="")
+#     print()
+#
+#
+# symbol(9, "+", "-")
+# symbol(9, "X", "O")
+
+
+# def res(a, b):
+#     if a > b:
+#         return a - b
+#     if a < b:
+#         return a + b
+#     return "Числа равны"
+#
+#
+# x = int(input("a = "))
+# y = int(input("b = "))
+# print(res(x, y))
+
+# def cub(a):
+#     return a ** 3
+#
+#
+# for i in range(1, 11):
+#     print(i, " в кубе = ", cub(i))
+
+# def change(lst):
+#     # lst[0], lst[-1] = lst[-1], lst[0]
+#     a = lst.pop()  # последний удаленный элемент
+#     b = lst.pop(0)  # первый удаленный элемент
+#     lst.append(b)
+#     lst.insert(0, a)
+#     return lst
+#
+#
+# print(change([1, 2, 3]))
+# print(change([9, 12, 33, 54, 105]))
+# print(change(['c', 'л', 'о', 'н']))
+
+# def func(x, y):
+#     if x > y:
+#         return True
+#     else:
+#         return False
+#
+#
+# print(func(10, 5))
+# print(func(10, 15))
+# a = 10
+# b = 15
+# if func(a, b):
+#     print("Первое число > второго числа!")
+# else:
+#     print("Первое число < второго числа!")
+
+
+# Проверка пароля(Хорошая задача)
+# def check_password(password):
+#     has_upper = False
+#     has_lower = False
+#     has_num = False
+#
+#     for ch in password:
+#         if "A" <= ch <= "Z":
+#             has_upper = True
+#         elif "a" <= ch <= "z":
+#             has_lower = True
+#         elif "0" <= ch <= "9":
+#             has_num = True
+#
+#     if len(password) >= 8 and has_upper and has_lower and has_num:
+#         return True
+#     return False
+#
+#
+# p = input("Введите пароль: ")
+# if check_password(p):
+#     print("Надежный пароль! ")
+# else:
+#     print("Ненадежный пароль!")
+
+
+# def get_sum(a=0, b=0, c=0, d=0):
+#     return a + b + c + d
+#
+#
+# print(get_sum(1, 5, 2, 7))
+# print(get_sum(1, 5, 2))
+# print(get_sum(1, 5))
+# x = 2
+# print(get_sum(1, 5, d=x))
+# print("Результат", get_sum(2, d=1, c=5), end="\n\n", sep="!!!!")
+# print(get_sum(1, 5, d=x))
+
+
+# def display_info(name, age):
+#     print("Name: ", name, "\nAge: ", age, end="\n\n")
+#
+#
+# display_info("Vladimir", 22)
+# display_info(age=22, name="Vladimir")
+# display_info("Igor", age=22, name="Vladimir")
+
+# Двумерный массив(матрицы)
+# from random import randint
+
+#
+# mas = [randint(0, 20) for i in range(5)]
+# print(mas)
+
+# lst = [2, 18, 9, 16, 18]
+# print(len(lst))
+# print(min(lst))
+
+# a = [randint(0, 100) for i in range(10)]
+# print(a)
+# mas = max(a)
+# print("Max = ", mas)
+# a.remove(mas)
+# a.insert(0, mas)
+# print(a)
+
+# lst = [randint(-20,20) for i in range(10)]
+# print(lst)
+# lst.sort(reverse=True)
+# print(lst)
+
+# lst = [randint(0, 100) for i in range(10)]
+# print(lst)
+#
+# mini = min(lst)
+# print(mini)
+#
+# ind = lst.index(mini)
+#
+# del lst[:ind]
+# print(lst)
+# from random import randint
+#
+# n1 = int(input("Размер первого списка: "))
+# n2 = int(input("Размер второго списка: "))
+#
+# a = [randint(0, 10) for i in range(n1)]
+# b = [randint(0, 10) for j in range(n2)]
+#
+# print("Первый список: ", a)
+# print("Второй список: ", b)
+#
+# c = a + b
+# print("Третий список: ", c)
+#
+# c = []
+# for i in range(len(a)):
+#     if a[i] not in c:
+#         c.append(a[i])
+# for i in range(len(b)):
+#     if b[i] not in c:
+#         c.append(b[i])
+#
+# print("Элементы обоих списков без повторения", c)
+# c = []
+# for i in range(len(a)):
+#     if a[i] in b and a[i] not in c:
+#         c.append(a[i])
+# print("Элементы общие для двух списков: ", c)
+#
+# c = [min(a),min(b), max(a),max(b)]
+# print(c)
+# from random import randint
+# n1 = int(input("Размер списка: "))
+# a = []
+# while len(a)< n1:
+
+# какой-то урок
+
+
+# def func1():
+#     a = 1
+#     b = 'line'
+#     c = [1, 2, 3]
+#
+#     def func2():
+#         nonlocal a, b
+#         c.append(4)
+#         a = a + 1
+#         b = b + "_new"
+#         return a, b, c
+#
+#     return func2
+#
+#
+# func = func1()
+# print(func())
+
+
+# def func(city):
+#     s = 0
+#
+#     def incr():
+#         nonlocal s
+#         s = s + 1
+#         print(city, s)
+#
+#     return incr
+#
+#
+# res1 = func('Москва')
+# res1()
+# res1()
+# res2 = func('Сочи')
+# res2()
+# res2()
+# res2()
+# res2()
+# res1()
+#
+# students = {
+#     'Alice': 98,
+#     'Bob': 67,
+#     'Chris': 85,
+#     'David': 75,
+#     'Ella': 54,
+#     'Fiona': 35,
+#     'Grace': 69
+#
+# }
+#
+#
+# def make(lower, upper):
+#     def student(exam):
+#         return {k: v for k, v in exam.items() if lower <= v < upper}
+#
+#     return student
+#
+#
+# A = make(90, 101)
+# B = make(70, 90)
+# C = make(50, 70)
+# D = make(0, 50)
+# print("A =", A(students))
+# print("B =", B(students))
+# print("C =", C(students))
+# print("D =", D(students))
+
+
+# Анонимные функции (lambda)
+
+# print((lambda x, y: x + y)(1, 2))
+#
+# (lambda x, y: print(x + y))(1, 2)
+#
+# func = lambda x, y: x + y
+
+# print(func(1, 2))
+# print(func('a', 'b'))
+
+# print((lambda x, y: x ** 2 + y ** 2)(2, 5))
+
+# print((lambda *args: args)(1, 2, 3, 4, 5, 6))
+# print((lambda *args: args)(5))
+
+# c = (lambda x: x * 2, lambda x: x * 3, lambda x: x * 4)
+# for t in c:
+#     print(t("abc_"))
+
+# def outer(n):
+#     def inner(x):
+#         return n + x
+#
+#     return inner
+#
+#
+# add1 = outer(5)
+# print(add1(10))
+#
+#
+# def outer1(n):
+#     return lambda x: n + x
+#
+#
+# add2 = outer1(5)
+# print(add2(10))
+#
+# outer2 = lambda n: lambda x: x + n
+# add3 = outer2(5)
+# print(add3(10))
+#
+# print((lambda n: lambda x: x + n)(5)(10))
+#
+# print((lambda n: lambda x: lambda z: z + n + x)(2)(4)(6))
+
+# def func(i):
+#     return i[1]
+#
+#
+# d = {'d': 10, 'b': 15, 'c': 4}
+# # a = sorted(d)
+# # print(a)
+# list_d = list(d.items())
+# print(list_d)
+# list_d.sort(key=func)
+# # list_d.sort(key=lambda i: i[1])
+# print(list_d)
+# print(dict(list_d))
+
+# players = [
+#     {'name': 'Антон', 'last name': 'Бирюков', 'rating': 9},
+#     {'name': 'Алексей', 'last name': 'Бодня', 'rating': 10},
+#     {'name': 'Федор', 'last name': 'Сидоров', 'rating': 4},
+#     {'name': 'Михаил', 'last name': 'Семенов', 'rating': 6},
+# ]
+#
+# res = sorted(players, key=lambda item: item['last name'])
+# print(res)
+# res = sorted(players, key=lambda item: item['rating'])
+# print(res)
+# res = sorted(players, key=lambda item: item['rating'], reverse=True)
+# print(res)
+
+# a = [lambda x, y: x + y, lambda x, y: x - y, lambda x, y: x * y, lambda x, y: x / y]
+# print(a[0](12, 3))
+
+# a = {'one': lambda x: x - 1, 'two': lambda x: x * (-1), 'three': lambda x: x ** 1}
+#
+# b = [-3, 10, 0, 4]
+#
+# for i in b:
+#     if i < 0:
+#         print(a['two'](i))
+#     elif i > 0:
+#         print(a['one'](i))
+#     else:
+#         print(a['three'](i))
+
+# d = {
+#     1: lambda: print("Понедельник"),
+#     2: lambda: print("Вторник"),
+#     3: lambda: print("Среда"),
+# }
+# d[2]()
+
+# print((lambda a, b, c: a if a < b and a < c else b if b < c and b < a else c)(3, 1, 2))
+
+
+# map(func, iterables), filter(func, iterable)
+
+# def mult(t):
+#     return t * 2
+#
+#
+# lst = [2, 8, 12, -5, -10]
+#
+# a = list(map(mult, lst))
+# print(a)
+#
+# a1 = list(map(lambda t: t * 2, lst))
+# print(a1)
+
+# t = (2.88, - 1.75, 100.55)
+#
+# t2 = tuple(map(lambda x: int(x), t))
+# print(t2)
+#
+# t3 = tuple(map(int, t))
+# print(t3)
+
+# areas = [3.564897, 7.4512368, 8.412578, 4.456712, 5.456782, 2.321456]
+#
+# print(list(map(round, areas, (2, 5, 2, 3, 6, 1))))
+
+# st = ['a', 'b', 'c', 'd', 'e']
+# num = [1, 2, 3, 4, 5]
+#
+# print(list(map(lambda x, y: (x, y), st, num)))
+
+# l1 = [1, 2, 3]
+# l2 = [4, 5, 6]
+# print(list(map(lambda x, y: x + y, l1, l2)))  # ([1,2,3],[4,5,6])
+#
+# a = l1,l2
+# print(a)
+
+# t = ('abcd', 'abc', 'cdrfg', 'def', 'ghi')
+# t2 = tuple(filter(lambda s: len(s) == 3, t))
+# print(t2)
+
+# b = [66, 90, 68, 59, 76, 60, 88, 74, 81, 65]
+# res = list(filter(lambda s: s > 75, b))
+# print(res)
+# import random
+#
+# a = []
+# for i in range(20):
+#     a.append(random.randint(2, 60))
+# print(a)
+# res = list(filter(lambda s: 10 <= s <= 20, a))
+# print(res)
+
+print(list(map(lambda x: x ** 2, filter(lambda x: x % 2, range(10)))))

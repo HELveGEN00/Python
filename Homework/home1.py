@@ -1,7 +1,6 @@
 # 12345
 # Найти произведение его цифр
 # Найти среднее арифметическое его цифр
-import random
 
 # num = 23569
 # print(num)
@@ -131,3 +130,23 @@ import random
 #     else:
 #         print("Число отсутствует в списке")
 #         break
+
+# random
+
+# import random
+# res = 0
+# a = []
+# for i in range(20):
+#     a.append(random.randint(0, 100))
+# print(a)
+# print("Сумма всех элементов: ", sum(a))
+
+# random matrica
+# from random import randint
+
+import math
+
+a = [lambda x: math.pi * x ** 2, lambda x, y: x * y, lambda a, b, h: (a + b) * h / 2]
+print("Площадь круга с радиусом 2: ", a[0](2))
+print("Площадь прямоугольника размером 10*13: ", a[1](10, 13))
+print("Площадь трапеции для a = 7, b = 5, h = 3: ", a[2](7, 5, 3))
