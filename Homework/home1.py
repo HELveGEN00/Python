@@ -143,10 +143,92 @@
 
 # random matrica
 # from random import randint
+#
+# m = [[randint(0, 10) for x in range(6)] for y in range(6)]
+# for row in m:
+#     for x in row:
+#         print(x, end="\t")
+#     print()
+# mat = [0, 8, 10, 0, 10, 7]
+# print()
+# print(mat)
+# print()
+# i = 0
+# for row in m:
+#     i += 1
+#     if i % 2 == 1:
+#         for x in mat:
+#             print(x, end="\t")
+#         print()
+#     else:
+#         for x in row:
+#             print(x, end="\t")
+#         print()
 
-import math
 
-a = [lambda x: math.pi * x ** 2, lambda x, y: x * y, lambda a, b, h: (a + b) * h / 2]
-print("Площадь круга с радиусом 2: ", a[0](2))
-print("Площадь прямоугольника размером 10*13: ", a[1](10, 13))
-print("Площадь трапеции для a = 7, b = 5, h = 3: ", a[2](7, 5, 3))
+# функции и список
+# import math
+#
+#
+# def func1():
+#     x = float(input("Введите длину прямоугольника: "))
+#     y = float(input("Введите ширину прямоугольника: "))
+#     res = x * y
+#     print("Площадь равна : ", res)
+#
+#
+# def func2():
+#     x = float(input("Введите основание: "))
+#     y = float(input("Введите высоту: "))
+#     res = x * y / 2
+#     print("Площадь равна : ", res)
+#
+#
+# def func3():
+#     x = float(input("Введите радиус r = "))
+#     res = math.pi * (x ** 2)
+#     print("Площадь равна : ", res)
+#
+#
+# a = int(input("1 - прямоугольник, 2 - треугольник, 3 - круг: "))
+# if a == 1:
+#     func1()
+# if a == 2:
+#     func2()
+# if a == 3:
+#     func3()
+
+
+# spisok
+from random import *
+
+# import math
+#
+# a = [lambda x: math.pi * x ** 2, lambda x, y: x * y, lambda a, b, h: (a + b) * h / 2]
+# print("Площадь круга с радиусом 2: ", a[0](2))
+# print("Площадь прямоугольника размером 10*13: ", a[1](10, 13))
+# print("Площадь трапеции для a = 7, b = 5, h = 3: ", a[2](7, 5, 3))
+
+
+# ВНУТРИ КРУГЛЫХ СКОБОК
+s = "Дана строка сим(волов, среди которых есть одна открыв)ающаяся"
+a = s[s.find('(') + 1:s.rfind(")")]
+s = a
+print(s)
+
+# Замена подстроки
+s1 = '11 23 44 55 23 22'
+print("Строка: ", s1)
+zam = input("Заменяемая подстрока: ")
+new = input("Новая подстрока: ")
+s1 = s1.split(zam)
+s1 = new.join(s1)
+print(s1)
+
+# ежата
+s = 'Ежевику для ежат\n' \
+    'Принесли два ежа.\n' \
+    'Ежевику еле-еле\n' \
+    'Ежата возле ели съели.\n'
+print(s)
+print(s.count('Е') + s.count(' е'))

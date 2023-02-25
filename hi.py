@@ -2,6 +2,7 @@
 # print("Hello,", name_first)
 # age = 20
 # print(age)
+import sys
 
 # a = 5
 # print(a)
@@ -841,7 +842,65 @@
 # while len(a)< n1:
 
 # какой-то урок
+# m = [
+#     [1, 2, 3, 4],
+#     [5, 6, 7, 8],
+#     [9, 10, 11, 12]
+# ]
+# # print(len(m))
+# print(m)
+# # print(m[1][2])
+# #
+# # a = [2, 'Hello', 5]
+# # print(a[1][1])
+# for row in range(len(m)):
+#     # print(m[row])
+#     for col in range(len(m[row])):
+#         print(m[row][col], end="\t\t")
+#     print()
+# print()
+# for row in m:
+#     # print(row)
+#     for x in row:
+#         print(x ** 2, end="\t\t")
+#     print()
 
+# matrix = [[x*y for x in range(1,10)] for y in range(1,10)]
+# for row in matrix:
+#     for x in row:
+#         print(x, end="\t")
+#     print()
+
+# for x, y, z in [[1, 2, 1], [3, 4, 2], [5, 6, 3], [7, 8, 4]]:
+#     print(z, ")", x, "+", y, "=", x + y)
+
+# from random import randint
+
+# matrix = [[randint(-20, 10) for x in range(3)] for y in range(4)]
+# print(matrix)
+# z = 0
+# for row in matrix:
+#     for x in row:
+#         print(x, end="\t\t")
+#         if x < 0:
+#             z += 1
+#     print()
+# print("Kоличество отрицательных эелментов: ", z)
+# from random import randint
+#
+# n = int(input("n = "))
+# m = [[randint(0, 100) for x in range(n)] for y in range(n)]
+# for row in m:
+#     # print(row)
+#     for x in row:
+#         print(x, end="\t")
+#     print()
+#
+# t = m[0][0]
+# for k in range(n):
+#     if t > m[k][k]:
+#         t = m[k][k]
+# print(t)
 
 # def func1():
 #     a = 1
@@ -1065,4 +1124,130 @@
 # res = list(filter(lambda s: 10 <= s <= 20, a))
 # print(res)
 
-print(list(map(lambda x: x ** 2, filter(lambda x: x % 2, range(10)))))
+# print(list(map(lambda x: x ** 2, filter(lambda x: x % 2, range(10)))))
+
+
+# Декораторы
+# def hello():
+#     return 'Hello, i am func "hello"'
+#
+#
+# def super_func(func):
+#     print('Hello, i am func "super_func"')
+#     print(func())
+#
+#
+# super_func(hello)
+
+######
+
+
+# print(ord('a'))
+# print(ord('#'))
+# print(ord('м'))
+
+# while True:
+#     n = input("->")
+#     if n != "-1":
+#         print(ord(n))
+#     else:
+#         break
+
+# s = "hello, WORLD! I am learning Python.H"
+
+# print(s.capitalize())  # Hello, world! i am learning python.
+# print(s.lower())  # hello, world! i am learning python.
+# print(s.upper())  # HELLO, WORLD! I AM LEARNING PYTHON.
+# print(s.swapcase())  # HELLO, world! i AM LEARNING pYTHON.print(s.lower().count("h"))
+
+# print(s.count("h", 1, -5))  # подсчет вхождений подстроки в строку
+# print(s.find("h"))  # возвращает первый индекс, который соответствует началу подстроки
+# или значение -1, если элемента нет
+# print(s.rfind("h"))  # возвращает последний индекс
+
+# print(s.index("h"))  # возвращает первый индекс, который соответствует началу подстроки
+# или значение ValueError, если элемента нет
+# print(s.rindex("h"))  # возвращает последний индекс
+
+# s = "один два"
+# one_word = s[:s.find(' ')]
+# two_word = s[s.rfind(' ') + 1:]
+# print(two_word + ' ' + one_word)
+
+# s = 'ab12c59p7dq'
+# print(s)
+# digits = []
+# for symbol in s:
+#     if '1234567890'.find(symbol) != -1:
+#         digits.append(int(symbol))
+#
+# print(digits)
+
+# st = 'The original words and form of a written or printed work'
+# ch = "z"
+# if st.count(ch) == 1:
+#     print(st.find(ch))
+# elif st.count(ch) >= 2:
+#     print(st.find(ch), st.rfind(ch))
+# s = "hello, WORLD! I am learning Python."
+#
+# print(s.endswith('lo', 0, 5))  # строка заканчивается заданным символом
+# print(s.startswith('I am', 14))  # строка начинается заданным символом
+
+
+# print('abc#123'.isalnum())  # определяет состоит ли строка из букв и цифр
+#
+# print('abcABC'.isalpha())  # определяет состоит ли строка из букв
+# print('4567123'.isdigit())  # определяет состоит ли строка из цифр
+#
+# print('abc1;№%%'.islower())  # определяет состоит ли строка из символов букв в нижнем регистре (могут
+# # присутствовать любые символы)
+#
+# print('ADF456'.isupper()) # определяет состоит ли строка из символов букв в верхнем регистре (могут
+# # присутствовать любые символы)
+
+# print("py".center(10))  # выравнивает строку по центру относительно заданного количества символов
+# print("py".center(10, '-'))
+# print("py".center(1))
+
+# print('       py'.lstrip())  # удаляет пробельные символы с левой стороны
+# print('py       '.rstrip())  # удаляет пробельные символы с правой стороны
+# print('      py       '.strip())  # удаляет пробельные символы с правой и левой стороны
+
+# print('https://www.python.org'.lstrip("/:pthsworg"))
+# print('https://www.python.org'.rstrip("/:pthsworg"))
+# print('https://www.python.org'.strip("/:pthsworg"))
+#
+# print('https://www.python.org'.lstrip("/:pths").rstrip('org.'))
+
+# str1 = "Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования."
+# print(str1.replace('Nython', 'Python', 2))
+
+# s = "Заменить в этой строке все появления буквы 'о' на 'О' кроме первого и последнего вхождения"
+# a = s[:s.find('о') + 1]
+# b = s[s.find('о') + 1:s.rfind('о')]
+# c = s[s.rfind('о'):]
+# s = a + b.replace('о', 'О') + c
+# print(s)
+
+# s = "-"
+# seq = ("a", "b", "c")
+# print(s.join(seq))
+#
+# print("..".join(['1', '2']))
+# print("...".join(['1', '2']))
+# print(":".join("Hello"))
+#
+# print("H:e:l:l:o".split(":"))
+# print("Строка разделенная пробелами".split())
+#
+# print("www.python.org.ru".split(".",2))
+# print("www.python.org.ru".rsplit(".",2))
+
+# a =  input("->").split()
+# print(a)
+
+# a = input("Введите ФИО: ")
+# a = a.split()
+# print(a)
+# print(f"{a[0].capitalize()} {a[1][0].upper()}.{a[2][0].upper()}.")
