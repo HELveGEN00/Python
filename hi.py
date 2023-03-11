@@ -2,7 +2,7 @@
 # print("Hello,", name_first)
 # age = 20
 # print(age)
-import sys
+import os
 
 # a = 5
 # print(a)
@@ -1251,3 +1251,447 @@ import sys
 # a = a.split()
 # print(a)
 # print(f"{a[0].capitalize()} {a[1][0].upper()}.{a[2][0].upper()}.")
+
+# import re
+
+# s = "Я ищу совпадения в 2023 году. И я их найду в два счёта."
+# reg = "в"
+# print(re.findall(reg, s))  # возвращает список содержащий все совпадения с шаблоном
+# print(re.search(reg, s))  # возвращает месторасположения первого совпадения объекта
+# print(re.search(reg, s).span())
+# print(re.search(reg, s).start())
+# print(re.search(reg, s).end())
+# print(re.search(reg, s).group())
+# print(re.match(reg, s)) # возвращает месторасположения совпадения объекта в начале строки
+
+# print(re.split(reg, s, 2)) # возвращает список в котором строка разбита по шаблону
+# print(re.sub(reg, "В", s, 3)) # поиск и замена
+
+# s = "Я ищу совпадения в 2023 году. И я их найду в два счёта. [-1863]"
+# reg = "[12][0-9][0-9][0-9]"
+# reg = r"\."
+# reg = r"[0-9\[\]\-.]"
+# reg = r"[^0-9]"
+# print(re.findall(reg, s))
+# print(ord("Я"))
+# print(ord("я"))
+# print(ord("а"))
+# print(ord("ё"))
+
+# s = "Час в 24-часовом формате от 00 до 23. 2021-06-15T20:59. Минуты, в диапазоне от 00 до 59. 2021-0615T01:09."
+# reg = r"[0-2][0-9]:[0-5][0-9]"
+# print(re.findall(reg, s))
+
+# s = "Я ищу совпадения ^ в 2023 году. И я их найду в два счё_та. [-1863]. Hello."
+# reg = r"\Bния"
+# print(re.findall(reg, s))
+
+# d = "Цифры: 7, +17, -42, 0012, 0.3.3"
+# print(re.findall(r"[+-]?\d+[.\d]*", d))
+
+# s = "06-03-1987 # Дата рождения"
+# print("Дата рождения:", re.sub(r"#.*", "", s))
+# print("Дата рождения:", re.sub(r"-", r".", re.sub(r"#.*", "", s)))
+
+# s = "author=Пушкин А.С.; title  = Евгений Онегин; price =200; year= 1831"
+# # reg = r"\w+\s*=\s*\w+[\s\w.]*"
+# reg = r"\w+\s*=[^;]+"
+# print(re.findall(reg, s))
+
+# s = "+7 499 456-45-78, +74994564578, +7 (499) 456 45 78, 74994564578"
+# reg = r"\+?7\d{10}"
+# print(re.findall(reg, s))
+
+# s = "Я ищу совпадения ^ в 2023 году. И я их найду в два счё_та."
+# # reg = r"^\w+\s\w+"
+# reg = r"\w+\.$"
+# print(re.findall(reg, s))
+
+# def validate_login(name):
+#     return re.findall(r'^[A-Za-z_0-9-]{3,16}$', name)
+#
+#
+# print(validate_login('Python_master'))
+# print(validate_login('P$yt$$09'))
+
+
+# text = """Python,
+# python,
+# PYTHON"""
+# reg = "(?im)^python"
+# print(re.findall(reg, text))
+
+# text = "<body>Пример жадного соответствия регулярных выражений</body>"
+# print(re.findall("<.*?>", text))
+#
+# s = "Я ищу совпадения^ в 2023 году. И я их найду в 2 счёта. 186389. Hello"
+# reg = r"\d{2,}"
+# print(re.findall(reg, s))
+
+# s = "<p>Изображение <img alt='картинка' src='bg.jpg' width='200'> - фон страницы<img alt='картинка'></p>"
+# # res = r'<img.*?>'
+# res = r'<img\s+[^>]*src\s*=\s*[^>]+>'
+# print(re.findall(res, s))
+# print(re.sub(res, "<img src='1.jpg'>", s))
+
+# s = "Петр, Ольга и Виталий отлично учатся!"
+# reg = "Петр|Ольга|Виталий"
+# print(re.findall(reg, s))
+
+# s = "int = 4, float = 4.0, double = 8.0f, int"
+# # reg = r"\w+\s*=\s*\d[.\w]*|double\s*=\s*\d[.\w]*"
+# reg = r"(?:int|double)\s*=\s*(?:\d[.\w]*)"
+# print(re.findall(reg, s))
+# print(re.search(reg, s))
+
+
+# () - сохраняющие скобки
+# (?:) - несохраняющие круглые скобки
+
+# s = "Word2016, PS6, AI5"
+# reg = r"([a-z]+)(?:\d*)"
+# print(re.findall(reg, s, re.IGNORECASE))
+# print(re.search(reg, s,re.IGNORECASE))
+
+# s = "5 + 7*2 - 4"
+# reg = r"\s*[+*-]\s*"
+# print(re.split(reg, s))
+
+# s = "Я ищу совпадения в 2023 году. И я их найду в 2 счё_та. 186389. Hello"
+# reg = r"(\d+)\s(\D+)"
+# print(re.findall(reg, s))
+# print(re.search(reg, s).group())
+# m = re.search(reg, s)
+# print(m[1])
+# print(m[2])
+# print(m[0])
+
+# text = """
+# Самара
+# Москва
+# Тверь
+# Уфа
+# Казань
+# """
+# count = 0
+#
+#
+# def repl_count(m):
+#     global count
+#     count += 1
+#     return f"<option value='{count}'>{m.group(1)}</option>\n"
+#
+#
+# print("<select name='city'>")
+# print(re.sub(r'\s*(\w+)\s*', repl_count, text))
+# print("</select>")
+
+
+# s = "Самолет прилетает 10/23/2021. Будем рады вас видеть после 10/24/2021"
+# reg = r"(\d{2})/(\d{2})/(\d{4})"
+# print(re.sub(reg, r"\2.\1.\3", s))  # 23.10.2021
+
+# s = "yandex.ru and yandex.com"
+# reg = r'(([a-z0-9\-]{2,}\.)+[a-z]{2,4})'
+# print(re.sub(reg, r"http://\1", s))
+
+# Рекурсия
+
+# def elevator(n):
+#     if n == 0:  # базовый случай
+#         print("Вы в подвале")
+#         return
+#     print("=>", n)
+#     elevator(n - 1)  # 3
+#     print(n, end=" ")
+#
+#
+# n1 = int(input("На каком вы этаже? "))
+# elevator(n1)
+
+# 1
+# 2
+# 3
+
+# def sum_list(lst):
+#     res = 0
+#     for i in lst:
+#         res += i
+#     return res
+#
+#
+# print(sum_list([1, 3, 5, 7, 9])) # 25
+
+# def sum_list(lst):  # [1, 3, 5, 7, 9],[3, 5, 7, 9],[5, 7, 9],[7, 9],[9]
+#     if len(lst) == 1:
+#         return lst[0]  # 9
+#     else:
+#         return lst[0] + sum_list(lst[1:])  # 1 +, 3 +, 5 +, 7 +
+#
+#
+# print(sum_list([1, 3, 5, 7, 9]))  # 25
+
+# def to_str(n, base):  # to_str(254,16)
+#     convert = "0123456789ABCDEF"
+#     if n < base:
+#         return convert[n]  # convert[]=
+#     else:
+#         return to_str(n // base, base) + convert[n % base]  # 6,
+#
+#
+# print(to_str(254, 8))
+
+names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill"], "Ann"]
+
+# print(len(names))
+# print(names[0])
+# print(isinstance(names[0], list))
+#
+# print(names[1])
+# print(isinstance(names[1], list))
+#
+# print(names[1][1])
+# print(isinstance(names[1][1], list))
+#
+# print(names[1][1][0])
+# print(isinstance(names[1][1][0], list))
+
+# def count_items(item_list):
+#     count = 0
+#     for item in item_list:
+#         if isinstance(item, list):
+#             count += count_items(item)
+#         else:
+#             count += 1
+#     return count
+#
+#
+# print(count_items(names))
+
+# def remote(text):
+#     if not text:
+#         return ""
+#     if text[0] == "\t" or text[0] == " ":
+#         return remote(text[1:])
+#     else:
+#         return text[0] + remote(text[1:])
+#
+#
+# print(remote("  Hello\tWorld "))
+
+
+# Файлы
+# f = open(r'C:\Proga\PYTHON\text.txt')
+# f = open('text.txt')
+# print(f)
+# print(*f)
+# print(f.mode)
+# print(f.encoding)
+# print(f.name)
+# f.close()
+# print(f.closed)
+
+# f = open('text.txt')
+# print(f.read(3))
+# print(f.read())
+# f.close()
+
+# f = open('test.txt')
+# print(f.readline())
+# print(f.readline(8))
+# print(f.readline())
+# print(f.readline())
+# f.close()
+
+# f = open('test.txt')
+# print(f.readlines(16))
+# print(f.readlines())
+# f.close()
+
+# f = open('test.txt')
+# s = 0
+# for i in f:
+#     print(f)
+#     s += 1
+# f.close()
+# print(s)
+
+# f = open('xyz.txt', "w")
+# f.write('Hello\nWorld!\n')
+# f.close()
+
+# f = open('xyz.txt', "a")
+# # f.write('New text!\n')
+# line = ['This is line 1 ', 'This is line 2']
+# f.writelines(line)
+# f.close()
+
+# f = open('xyz.txt', "w")
+# lst = [str(i ** 5) for i in range(1, 20)]
+# print(lst)
+# for index in lst:
+#     f.write(index + '\t')
+# f.close()
+# pos = int(input("Выберите позицию: "))
+# f = open('text2.txt', "w")
+# f.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;")
+# f.close()
+#
+# f = open('text2.txt', "r")
+# read_file = f.readlines()
+# print(read_file)
+# read_file[pos] = 'helloWord!\n'
+# print(read_file)
+# f.close()
+#
+# f = open('text2.txt', "w")
+# f.writelines(read_file)
+# f.close()
+
+# f = open('text2.txt', "w")
+# f.write("Замена строки в текстовом файле;\nизменить строку в списке;\nзаписать список в файл;")
+# f.close()
+#
+# pos = int(input("Выберите позицию: "))
+# f = open('text2.txt', "r")
+# read_file = f.readlines()
+# print(read_file)
+# # if pos >= len(read_file):
+# #     print("Такого индекса не существует!")
+# # else:
+# #     read_file[pos-1] = 'helloWord!!!\n'
+# if 0 < pos <= len(read_file):
+#     del read_file[pos - 1]
+# else:
+#     print("Такого индекса не существует!")
+# print(read_file)
+# f.close()
+#
+# f = open('text2.txt', "w")
+# f.writelines(read_file)
+# f.close()
+
+
+# f = open('text.txt', 'r')
+# print(f.read(3))  # Hel
+# print(f.tell())  # 3 - возвращает позицию условного курсора в файле
+# print(f.seek(1))  # 1 - перемещает условный курсор в заданную позицию
+# print(f.read())  # ello!
+# print(f.tell())  # 6
+# f.close()
+
+# f = open('text.txt', 'r+')
+# print(f.write("I am learning Python"))
+# print(f.seek(3))
+# print(f.write("-new string-"))
+# print(f.tell())
+# f.close()
+
+# with open('text.txt', 'w+') as f:
+#     print(f.write('012345\n6789'))
+#
+# with open('text.txt', 'r+') as f:
+#     for line in f:
+#         print(line[:3])
+
+# file_name = "res.txt"
+# lst = [4.5, 2.8, 3.9, 1.0, 0.3, 4.33, 7.777]
+#
+#
+# def get_line(lt):
+#     lt = list(map(str, lt))
+#     print(lt)
+#     return " ".join(lt)
+#
+#
+# with open(file_name, 'w') as f:
+#     f.write(get_line(lst))
+#
+# print('Done!')
+
+# with open('res.txt', 'r+') as f:
+#     x = f.read().split(" ")
+#     print(x)
+#     print(len(x))
+#     print(sum(map(float, x)))
+
+# def longest_words(file):
+#     with open(file, encoding='utf-8') as text:
+#         w = text.read().split()
+#         max_length = len(max(w, key=len))
+#         res = [word for word in w if len(word) == max_length]
+#         # print(w)
+#         # print(res)
+#         if len(res) == 1:
+#             return res[0]
+#         return res
+#
+#
+# print(longest_words('test.txt'))
+
+
+# text = "Строка №1\nСтрока №2\nСтрока №3\nСтрока №4\nСтрока №5\nСтрока №6\nСтрока №7\nСтрока №8\nСтрока №9\nСтрока №10\n"
+#
+# with open('one.txt', 'w') as f:
+#     f.write(text)
+
+
+# read_file = 'one.txt'
+# write_file = 'two.txt'
+# three = 'three.txt'
+# with open(read_file, 'r') as fr, open(write_file, 'r') as fw, open(three, 'w') as ft:
+#     # for line in fr:
+#     #     line = line.replace("Строка", "Линия - ")
+#     #     fw.write(line)
+#
+#     a = fr.readlines()
+#     b = fw.readlines()
+#     # print(a)
+#     # print(b)
+#     # c = a + b
+#     # print(c)
+#     # for line in c:
+#     #     ft.write(line)
+#
+#     for i, j in zip(a, b):
+#         c = i + j
+#         ft.write(c)
+
+from random import randint
+
+# s = tuple(2**i for i in range(1,13))
+# print(s)
+
+# t1 = tuple('hello')
+# t2 = tuple('world')
+# t3 = t1 + t2
+# print(t3)
+# # print(len(t3))
+# # print(t3.count('l'))
+# # print(t3.count('a'))
+# if 'l' in t3:
+#     print(t3.index('l'))
+# else:
+#     print("Такого символа нет")
+#
+# for i in t3:
+#     print(i, end=" ")
+
+
+
+# import os.path
+#
+#
+#
+#
+# def remove_empty_dirs(root_tree):
+#     print(f"Удаление пустых директорий в ветви {root_tree}")
+#     print("-" * 50)
+#     for root, dirs, files in os.walk("nested1"):
+#         if not os.listdir(root):
+#             os.rmdir(root)
+#             print(f"Директория {root} удалена")
+#     print("-" * 50)
+#
+#
+# remove_empty_dirs("nested1")

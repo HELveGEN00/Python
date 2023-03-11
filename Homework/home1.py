@@ -200,7 +200,7 @@
 
 
 # spisok
-from random import *
+# from random import *
 
 # import math
 #
@@ -210,25 +210,127 @@ from random import *
 # print("Площадь трапеции для a = 7, b = 5, h = 3: ", a[2](7, 5, 3))
 
 
-# ВНУТРИ КРУГЛЫХ СКОБОК
-s = "Дана строка сим(волов, среди которых есть одна открыв)ающаяся"
-a = s[s.find('(') + 1:s.rfind(")")]
-s = a
-print(s)
+# # ВНУТРИ КРУГЛЫХ СКОБОК
+# s = "Дана строка сим(волов, среди которых есть одна открыв)ающаяся"
+# a = s[s.find('(') + 1:s.rfind(")")]
+# s = a
+# print(s)
+#
+# # Замена подстроки
+# s1 = '11 23 44 55 23 22'
+# print("Строка: ", s1)
+# zam = input("Заменяемая подстрока: ")
+# new = input("Новая подстрока: ")
+# s1 = s1.split(zam)
+# s1 = new.join(s1)
+# print(s1)
+#
+# # ежата
+# s = 'Ежевику для ежат\n' \
+#     'Принесли два ежа.\n' \
+#     'Ежевику еле-еле\n' \
+#     'Ежата возле ели съели.\n'
+# print(s)
+# print(s.count('Е') + s.count(' е'))
 
-# Замена подстроки
-s1 = '11 23 44 55 23 22'
-print("Строка: ", s1)
-zam = input("Заменяемая подстрока: ")
-new = input("Новая подстрока: ")
-s1 = s1.split(zam)
-s1 = new.join(s1)
-print(s1)
+# кортеж
+# k = ('ab', 'abcd', 'cde', 'abc', 'def',)
+# res = input('s=')
+# for i in k:
+#     if res in i:
+#         print(i)
+#         break
+#     else:
+#         print("Not found")
 
-# ежата
-s = 'Ежевику для ежат\n' \
-    'Принесли два ежа.\n' \
-    'Ежевику еле-еле\n' \
-    'Ежата возле ели съели.\n'
-print(s)
-print(s.count('Е') + s.count(' е'))
+# result symbol
+# tup = tuple(input("Введите элементы без пробела:"))
+# print(tup)
+# for i in set(tup):
+#     print(f'Символ {i}:{tup.count(i)}')
+
+
+# словари
+# slov = {i: i ** 3 for i in range(1, 11)}
+# print(slov)
+#
+# # №2stroki
+# s1 = input("Первая строка:")
+# s2 = input("Вторая строка:")
+# a = list(set(s1) - set(s2))
+# print("Наши буквы")
+# for i in a:
+#     print(i, end=' ')
+
+# №3 найти все буквы
+# s1 = input("Первая строка:")
+# s2 = input("Вторая строка:")
+# a = list(set(s1) | set(s2))
+# print("Наши буквы")
+# for i in a:
+#     print(i, end=' ')
+
+# №4 уникальные
+
+# s1 = input("Первая строка:")
+# s2 = input("Вторая строка:")
+# a = list(set(s1) ^ set(s2))
+# print("Наши буквы")
+# for i in a:
+#     print(i, end=' ')
+
+# # 2 spiska
+# x = ['red', 'green', 'blue']
+# y = ['#FF0000', '#008000', '#000FFF']
+# print(dict(zip(x, y)))
+#
+# # 3 slovari v 1
+# x = {
+#     1: 10,
+#     2: 20,
+# }
+# y = {
+#     3: 30,
+#     4: 40,
+# }
+# z = {
+#     5: 50,
+#     6: 60,
+# }
+# x.update(y)
+# x.update(z)
+# print(x)
+
+# slov
+my_dict = {
+    'emp1': {
+        'name': 'Jonh',
+        'salary': 7500,
+    },
+    'emp2': {
+        'name': 'Emma',
+        'salary': 8000,
+    },
+    'emp3': {
+        'name': 'Brad',
+        'salary': 6500,
+    },
+}
+print(my_dict)
+my_dict['emp3']['salary'] = 8500
+print(my_dict)
+# norecurse
+
+# names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill"], "Ann"]
+# print(names)
+# count = 0
+# for i in range(len(names)):
+#     count += 1
+#     for j in range(len(names[i]) - 1):
+#         if isinstance(names[i], list):
+#             count += 1
+#             for k in range(len(names[i][j]) - 1):
+#                 if isinstance(names[i][j], list):
+#                     count += 1
+#
+# print(count)
