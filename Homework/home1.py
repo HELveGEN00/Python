@@ -302,23 +302,23 @@
 # print(x)
 
 # slov
-my_dict = {
-    'emp1': {
-        'name': 'Jonh',
-        'salary': 7500,
-    },
-    'emp2': {
-        'name': 'Emma',
-        'salary': 8000,
-    },
-    'emp3': {
-        'name': 'Brad',
-        'salary': 6500,
-    },
-}
-print(my_dict)
-my_dict['emp3']['salary'] = 8500
-print(my_dict)
+# my_dict = {
+#     'emp1': {
+#         'name': 'Jonh',
+#         'salary': 7500,
+#     },
+#     'emp2': {
+#         'name': 'Emma',
+#         'salary': 8000,
+#     },
+#     'emp3': {
+#         'name': 'Brad',
+#         'salary': 6500,
+#     },
+# }
+# print(my_dict)
+# my_dict['emp3']['salary'] = 8500
+# print(my_dict)
 # norecurse
 
 # names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill"], "Ann"]
@@ -334,3 +334,51 @@ print(my_dict)
 #                     count += 1
 #
 # print(count)
+
+# from math import pi
+#
+#
+# class Table:
+#     def __init__(self, width=None, length=None, radius=None):
+#         if radius is None:
+#             self._width = width
+#             self._length = length
+#             if length is None:
+#                 self._length = width
+#         else:
+#             self._radius = radius
+#
+#     def calc_area(self):
+#         raise NotImplementedError("В дочернем классе должен быть метод calc_area()")
+#
+#
+# class SqTable(Table):
+#     def calc_area(self):
+#             return self._width * self._length
+#
+#
+# class RoundTable(Table):
+#     def calc_area(self):
+#         return round(pi * self._radius ** 2, 2)
+#
+#
+# t = SqTable(20)
+# print(t.__dict__)
+# print(t.calc_area())
+# t1 = RoundTable(radius=20)
+# print(t1.calc_area())
+# print(t1.__dict__)
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.comp = self.Comp()
+
+    def show(self):
+        print(self.name, " => ")
+
+    class Comp:
+        def show(self):
+            print("7, i7, 16")
+
+

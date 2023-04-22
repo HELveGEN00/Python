@@ -1659,6 +1659,7 @@ names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill
 
 from random import randint
 
+
 # s = tuple(2**i for i in range(1,13))
 # print(s)
 
@@ -1678,7 +1679,6 @@ from random import randint
 #     print(i, end=" ")
 
 
-
 # import os.path
 #
 #
@@ -1695,3 +1695,777 @@ from random import randint
 #
 #
 # remove_empty_dirs("nested1")
+
+
+# Classi!
+# class Prop:
+#     def __init__(self, sp: Point, ep: Point, color: str = "red", width: int = 1):
+#         print("Инициализатор базового класса Prop")
+#         self._sp = sp
+#         self._ep = ep
+#         self._color = color
+#         self.__width = width
+#
+#     def get_width(self):
+#         return self.__width
+#
+#
+# class Line(Prop):
+#     def __init__(self, *args):
+#         print("Переопределение инициализатора для класса Line")
+#         # Prop.__init__(self, *args)
+#         super().__init__(*args)
+#
+#     def draw_rect(self):
+#         print(f"Рисование линии: {self._sp},{self._ep},{self._color},{self.get_width()}")
+#
+#
+# class Rect(Prop):
+#     def draw_react
+
+
+# class Figure:
+#     def __init__(self, color):
+#         self.__color = color
+#
+#     @property
+#     def color(self):
+#         return self.__color
+#
+#     @color.setter
+#     def color(self, c):
+#         self.__color = c
+#
+#
+# class Rectangle(Figure):
+#     def __init__(self, width, height, color):
+#         self.__width = width
+#         self.__height = height
+#         super().__init__(color)
+#
+#     @property
+#     def width(self):
+#         return self.__width
+#
+#     @width.setter
+#     def width(self, w):
+#         if w > 0:
+#             self.__width = w
+#         else:
+#             raise ValueError("Ширина прямоугольника должна быть положительна!")
+#
+#     @property
+#     def height(self):
+#         return self.__height
+#
+#     @height.setter
+#     def height(self, h):
+#         if h > 0:
+#             self.__height = h
+#         else:
+#             raise ValueError("Высота прямоугольника должна быть положительна!")
+#
+#     def area(self):
+#         print(F"Площадь {self.color} прямоугольника {self.__width}x{self.__height}:", end=" ")
+#         return self.__width * self.__height
+#
+#
+# rect = Rectangle(10, 20, 'green')
+# print(rect.width)
+# print(rect.height)
+# print(rect.color)
+# rect.color = 'red'
+# print(rect.color)
+# print(rect.area())
+# print(rect.__dict__)
+
+# class Point:
+#     def __init__(self, x=0, y=0):
+#         self.x = x
+#         self.y = y
+#
+#     def __str__(self):
+#         return f"({self.x},{self.y})"
+#
+#     def is_digit(self):
+#         if isinstance(self.x, (int, float)) and isinstance(self.y, (int, float)):
+#             return True
+#         return False
+#
+#     def is_int(self):
+#         if isinstance(self.x, int) and isinstance(self.y, int):
+#             return True
+#         return False
+#
+#
+# class Prop:
+#     def __init__(self, sp: Point, ep: Point, color: str = "red", width: int = 1):
+#         self._sp = sp
+#         self._ep = ep
+#         self._color = color
+#         self._width = width
+#
+#     def set_coord(self, sp, ep):
+#         if sp.is_digit() and ep.is_digit():
+#             self._sp = sp
+#             self._ep = ep
+#         else:
+#             print("Координаты должны быть числами!")
+#
+#
+# class Line(Prop):
+#     def draw_line(self):
+#         print(f"Рисование линии: {self._sp},{self._ep},{self._color},{self._width}")
+#
+#
+# class Rect(Prop):
+#     def draw_rect(self):
+#         print(f"Рисование прямоугольника: {self._sp},{self._ep},{self._color},{self._width}")
+#
+#     def set_coord(self, sp, ep):
+#         if sp.is_int() and ep.is_int():
+#             self._sp = sp
+#             self._ep = ep
+#         else:
+#             print("Координаты должны быть целыми числами!")
+#
+#
+# line = Line(Point(1, 2), Point(100, 200))
+# line.draw_line()
+# line.set_coord(Point(5.5, 14), Point(30, 54))
+# line.draw_line()
+# print()
+#
+# rect = Rect(Point(10, 20), Point(200, 300))
+# rect.draw_rect()
+# rect.set_coord(Point(5, 14), Point(30, 54))
+# rect.draw_rect()
+
+
+# class Rect:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#
+#     def show_rect(self):
+#         print(f"Прямоугольник:\nШирина: {self.width}\nВысота: {self.height}")
+#
+#
+# class RectFon(Rect):
+#     def __init__(self, width, height, background):
+#         self.fon = background
+#         super().__init__(width, height)
+#
+#     def show_rect(self):
+#         super().show_rect()
+#         print(f"Фон: {self.fon}")
+#
+#
+# class RectBorder(Rect):
+#     def __init__(self, width, height, border):
+#         self.bord = border
+#         super().__init__(width, height)
+#
+#     def show_rect(self):
+#         super().show_rect()
+#         print(f"Рамка: {self.bord}")
+#
+#
+# shape1 = RectFon(400, 200, "yellow")
+# shape1.show_rect()
+# print()
+# shape2 = RectBorder(600, 300, "1px solid red")
+# shape2.show_rect()
+
+# class Vector(list):
+#     def __str__(self):
+#         return " ".join(map(str, self))  # " ".join([1,2,3])
+#
+#
+# v = Vector([1, 2, 3])
+# print(v)
+# print(type(v))
+#
+# print(" ".join(['1', '2', '3']))
+
+# class Point:
+#     def __init__(self, x=0, y=0):
+#         self.x = x
+#         self.y = y
+#
+#     def __str__(self):
+#         return f"({self.x}, {self.y})"
+#
+#     def is_digit(self):
+#         if isinstance(self.x, (int, float)) and isinstance(self.y, (int, float)):
+#             return True
+#         return False
+#
+#     def is_int(self):
+#         if isinstance(self.x, int) and isinstance(self.y, int):
+#             return True
+#         return False
+#
+#
+# class Prop:
+#     def __init__(self, sp: Point, ep: Point, color: str = "red", width: int = 1):
+#         self._sp = sp
+#         self._ep = ep
+#         self._color = color
+#         self._width = width
+#
+#     def set_coord(self, sp, ep):
+#         if sp.is_digit() and ep.is_digit():
+#             self._sp = sp
+#             self._ep = ep
+#         else:
+#             print("Координаты должны быть числами")
+#
+#
+# class Rect(Prop):
+#     def draw_rect(self):
+#         print(f"Рисование прямоугольника: {self._sp}, {self._ep}, {self._color}, {self._width}")
+#
+#     def set_coord(self, sp, ep=None):
+#         if ep is None:
+#             if sp.is_int():
+#                 self._sp = sp
+#             else:
+#                 print("Первая координата должна быть числом")
+#         else:
+#             if sp.is_int() and ep.is_int():
+#                 self._sp = sp
+#                 self._ep = ep
+#             else:
+#                 print("Координаты должны быть целыми числами")
+#
+#
+# rect = Rect(Point(1, 2), Point(10, 20))
+# rect.draw_rect()
+# rect.set_coord(Point(10, 30), Point(40, 70))
+# rect.draw_rect()
+
+
+# class Point:
+#     def __init__(self, x=0, y=0):
+#         self.x = x
+#         self.y = y
+#
+#     def __str__(self):
+#         return f"({self.x}, {self.y})"
+#
+#     def is_digit(self):
+#         if isinstance(self.x, (int, float)) and isinstance(self.y, (int, float)):
+#             return True
+#         return False
+#
+#     def is_int(self):
+#         if isinstance(self.x, int) and isinstance(self.y, int):
+#             return True
+#         return False
+#
+#
+# class Prop:
+#     def __init__(self, sp: Point, ep: Point, color: str = "red", width: int = 1):
+#         self._sp = sp
+#         self._ep = ep
+#         self._color = color
+#         self._width = width
+#
+#     def set_coord(self, sp, ep):
+#         if sp.is_digit() and ep.is_digit():
+#             self._sp = sp
+#             self._ep = ep
+#         else:
+#             print("Координаты должны быть числами")
+#
+#     def draw(self):
+#         raise NotImplementedError("В дочерней классе должен определен метод draw()")
+#
+# class Line(Prop):
+#     def draw(self):
+#         print(f"Рисование линии: {self._sp}, {self._ep}, {self._color}, {self._width}")
+#
+#
+# class Rect(Prop):
+#     def draw(self):
+#         print(f"Рисование прямоугольника: {self._sp}, {self._ep}, {self._color}, {self._width}")
+#
+#
+# class Ellipse(Prop):
+#     def draw(self):
+#         print(f"Рисование эллипса: {self._sp}, {self._ep}, {self._color}, {self._width}")
+#     pass
+#
+# figs = list()
+# figs.append(Line(Point(0, 0), Point(10, 10)))
+# figs.append(Line(Point(10, 10), Point(20, 10)))
+# figs.append(Rect(Point(50, 50), Point(100, 100)))
+# figs.append(Ellipse(Point(-10, -10), Point(10, 10)))
+#
+# for f in figs:
+#     f.draw()
+
+# from abc import ABC, abstractmethod
+#
+#
+# class Chess(ABC):  # Абстрактный класс
+#     def draw(self):
+#         print("Нарисовал шахматную фигуру")
+#
+#     @abstractmethod
+#     def move(self):  # Абстрактный метод
+#         print("Метод move() в базовом классе")
+#
+#
+# class Queen(Chess):
+#     def move(self):
+#         super().move()
+#         print("Ферзь перемещен на е2е4")
+#
+#
+# q = Queen()
+# q.draw()
+# q.move()
+
+# from math import pi
+#
+#
+# class Table:
+#     def __init__(self, width=None, length=None, radius=None):
+#         if radius is None:
+#             self._width = width
+#             self._length = length
+#             if length is None:
+#                 self._length = width
+#         else:
+#             self._radius = radius
+#
+#     def calc_area(self):
+#         raise NotImplementedError("В дочернем классе должен быть метод calc_area()")
+#
+#
+# class SqTable(Table):
+#     def calc_area(self):
+#             return self._width * self._length
+#
+#
+# class RoundTable(Table):
+#     def calc_area(self):
+#         return round(pi * self._radius ** 2, 2)
+#
+#
+# t = SqTable(20)
+# print(t.__dict__)
+# print(t.calc_area())
+# t1 = RoundTable(radius=20)
+# print(t1.calc_area())
+# print(t1.__dict__)
+
+
+# from abc import ABC, abstractmethod
+#
+#
+# class Curency(ABC):
+#     def __init__(self, value):
+#         self.value = value
+#
+#     @abstractmethod
+#     def convert_to_rub(self):
+#         pass
+#
+#     @abstractmethod
+#     def print_value(self):
+#         print(self.value, end=" ")
+#
+#
+# class Dollar(Curency):
+#     rate_to_rub = 74.16
+#     suffix = "USD"
+#
+#     def convert_to_rub(self):
+#         return self.value * Dollar.rate_to_rub
+#
+#     def print_value(self):
+#         super().print_value()
+#         print(Dollar.suffix, end=" ")
+#
+#
+# class Evro(Curency):
+#     rate_to_rub = 90.14
+#     suffix = "EUR"
+#
+#     def convert_to_rub(self):
+#         return self.value * Evro.rate_to_rub
+#
+#     def print_value(self):
+#         super().print_value()
+#         print(Evro.suffix, end=" ")
+#
+#
+# elem = [Dollar(5), Dollar(10), Dollar(50), Dollar(100)]
+# for d in elem:
+#     d.print_value()
+#     print(f" = {d.convert_to_rub():.2f} RUB")
+# print()
+# elem2 = [Evro(5), Evro(10), Evro(50), Evro(100)]
+# for s in elem2:
+#     s.print_value()
+#     print(f" = {s.convert_to_rub():.2f} RUB")
+
+
+# from abc import ABC, abstractmethod
+#
+#
+# class Father(ABC):
+#     @abstractmethod
+#     def display1(self):
+#         pass
+#
+#     @abstractmethod
+#     def display2(self):
+#         pass
+#
+#
+# class Child(Father):
+#     def display1(self):
+#         print("Child")
+#
+#
+# class GrandChild(Child):
+#     def display2(self):
+#         print("GrandChild")
+#
+#
+# gc = GrandChild()
+# gc.display2()
+# gc.display1()
+
+
+# def func():
+#     x = 2
+#
+#     def inner():
+#         n = 4
+#         return n + x
+#
+#     return inner
+#
+#
+# a = func()
+# b = a()
+# print(b)
+
+
+# class MyOuter:
+#     age = 18
+#
+#     def __init__(self, name):
+#         self.name = name
+#
+#     @classmethod
+#     def outer_class_method(cls):
+#         print("outer_class_method")
+#
+#     def outer_obj_method(self):
+#         print('outer_obj_method')
+#
+#     class MyInner:
+#         def __init__(self, inner_name, obj):
+#             self.inner_name = inner_name
+#             self.obj = obj
+#
+#         def inner_method(self):
+#             print("Inner_method", MyOuter.age, self.obj.name)
+#             MyOuter.outer_class_method()
+#             self.obj.outer_obj_method()
+#
+#
+# out = MyOuter("внешний")
+# print(out.name)
+# inner = out.MyInner('внутренний', out)
+# print(inner.inner_name)
+# inner.inner_method()
+
+# class Color:
+#     def __init__(self):
+#         self.name = "Green"
+#         self.lg = self.LightGreen()
+#
+#     def show(self):
+#         print("Name:", self.name)
+#
+#     class LightGreen:
+#         def __init__(self):
+#             self.name = "LightGreen"
+#
+#         def display(self):
+#             print("Name:", self.name)
+#
+#
+# outer = Color()
+# outer.show()
+# g = outer.lg
+
+# class Intern:
+#     def __init__(self):
+#         self.name = "Smith"
+#         self.imp = Employee().Head()
+#
+#     def display(self):
+#         print('Name:', self.name)
+#
+#
+# class Employee:
+#     def __init__(self):
+#         self.name = "Employee"
+#         # self.intern = Intern()
+#         # self.Head = self.Head()
+#
+#     def show(self):
+#          print('Name:', self.name) #, self.intern.name
+#
+#     class Head:
+#         def __init__(self):
+#             self.name = "Alba"
+#
+#         def display(self):
+#             print('Name:', self.name)
+#
+#
+# intern = Intern()
+# # a = intern.imp
+# # print(a.name)
+# print(intern.imp.name)
+# outer = Employee()
+# outer.show()
+# d1 = outer.intern
+# d1.display()
+# d2 = outer.Head
+# d2.display()
+
+# class Outer:
+#     def __init__(self):
+#         self.inner = self.inner()
+#
+#     def show(self):
+#         print("Внешний класс")
+#
+#     class inner:
+#         def __init__(self):
+#             self.inner_inner = self.InnerClass()
+#
+#         def show(self):
+#             print("Вложенный класс")
+#
+#         class InnerClass:
+#             def show(self):
+#                 print('Класс внутри вложенного класса')
+#
+#
+# outer = Outer()
+# outer.show()
+#
+# inner1 = outer.inner
+# inner1.show()
+#
+# inner2 = inner1.inner_inner
+# inner2.show()
+
+# class Computer:
+#     def __init__(self):
+#         self.name = "PC001"
+#         # self.os = self.OS()
+#         # self.cpu = self.CPU()
+#
+#     class OS:
+#         def system(self):
+#             return "Windows 10"
+#
+#     class CPU:
+#         def make(self):
+#             return "Intel"
+#
+#         def model(self):
+#             return "Core-i7"
+#
+#
+# comp = Computer()
+# # my_os = comp.os
+# # my_cpu = comp.cpu
+# my_os = Computer.OS()
+# my_cpu = Computer.CPU()
+# # print(comp.name)
+# print(my_os.system())
+# print(my_cpu.make())
+# print(my_cpu.model())
+
+# class Base:
+#     # def __init__(self):
+#     #     self.db = self.Inner()
+#
+#     def display(self):
+#         print("Базовый класс")
+#
+#     class Inner:
+#         def display1(self):
+#             print("Вложенный класс внутри базового")
+#
+#
+# class SubClass(Base):
+#     def __init__(self):
+#         print("Дочерний класс")
+#         super().__init__()
+#
+#     class Inner(Base.Inner):
+#         def display2(self):
+#             print('Вложенный класс внутри дочернего')
+#
+#
+# a = SubClass()
+# a.display()
+# # b = a.db
+# b = SubClass.Inner()
+# b.display1()
+# b.display2()
+
+# class Cat:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def __repr__(self):
+#         return f"{self.__class__}:{self.name}"
+#
+#     def __str__(self):
+#         return f"{self.name}"
+#
+#
+# cat = (Cat("Пушок"), Cat('Мурзик'))
+# print(cat)
+
+
+# class Point:
+#     def __init__(self, *args):
+#         self.__coord = args
+#
+#     def __len__(self):
+#         return len(self.__coord)
+#
+#
+# p = Point(5, 9, 4)
+# print(len(p))
+
+# import math
+#
+#
+# class Point:
+#     __slots__ = ('x', 'y', '__length')
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#         self.length = math.sqrt(x * x + y * y)
+#
+#     @property
+#     def length(self):
+#         return self.__length
+#
+#     @length.setter
+#     def length(self, value):
+#         self.__length = value
+#
+#
+# p1 = Point(5, 10)
+# print(p1.length)
+# p1.length = 10
+# print(p1.length)
+# # print(p1.__dict__)
+
+# class Point:
+#     __slots__ = ('x', 'y')
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#
+# class Point2D:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#
+# p1 = Point(5, 10)
+# p2 = Point2D(5, 10)
+# print('p1 =', p1.__sizeof__())
+# print('p2 =', p2.__sizeof__() + p2.__dict__.__sizeof__())
+# print('p2 =', p2.__sizeof__())
+
+# class Point:
+#     __slots__ = ('x', 'y')
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#
+# class Point3D(Point):
+#     pass
+#
+#
+# p1 = Point(5, 10)
+# p3 = Point3D(5, 10)
+# p3.z = 10
+# print(p3.x, p3.y, p3.z)
+
+# class Creature:
+#     def __init__(self, name):
+#         self.name = name
+#
+#
+# class Animal(Creature):
+#     def sleep(self):
+#         print(self.name, "is sleeping")
+#
+#
+# class Pet(Creature):
+#     def play(self):
+#         print(self.name, "is playing")
+#
+#
+# class Dog(Animal, Pet):
+#     def bark(self):
+#         print(self.name, "is barking")
+#
+#
+# b = Dog("Buddy")
+# b.bark()
+# b.sleep()
+# b.play()
+
+# class A:
+#     def __init__(self):
+#         print("Класс A")
+#
+# class AA:
+#     def __init__(self):
+#         print("Класс AA")
+#
+# class B(A):
+#     def __init__(self):
+#         print("Класс B")
+#
+#
+# class C(AA):
+#     def __init__(self):
+#         print("Класс C")
+#
+#
+# class D(B, C):
+#     # def __init__(self):
+#     #     print("Класс D")
+#
+#     ...
+#
+# d = D()
+# print(D.mro())
