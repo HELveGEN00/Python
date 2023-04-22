@@ -369,16 +369,15 @@
 # print(t1.calc_area())
 # print(t1.__dict__)
 
-class Student:
-    def __init__(self, name):
-        self.name = name
-        self.comp = self.Comp()
-
-    def show(self):
-        print(self.name, " => ")
-
-    class Comp:
-        def show(self):
-            print("7, i7, 16")
-
-
+# class Student:
+#     def __init__(self, name):
+#         self.name = name
+#         self.comp = self.Comp()
+#
+#     def show(self):
+#         print(self.name, " => ")
+#
+#     class Comp:
+#         def show(self):
+#             print("7, i7, 16")
+#

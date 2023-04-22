@@ -2,7 +2,7 @@
 # print("Hello,", name_first)
 # age = 20
 # print(age)
-import json
+# import json
 
 # a = 5
 # print(a)
@@ -4862,6 +4862,190 @@ import json
 # print(res.text)
 
 
+# import requests
+# from bs4 import BeautifulSoup
+#
+#
+# def get_html(url):
+#     res = requests.get(url)
+#     return res.text
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.find('header', id="masthead").find('p', class_='site-title').text
+#     print(p1)
+#
+#
+# def main():
+#     url = "https://ru.wordpress.org/"
+#     get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
+#
+#
+# import requests
+# from bs4 import BeautifulSoup
+# import re
+# import csv
+#
+#
+# def get_html(url):
+#     res = requests.get(url)
+#     return res.text
+#
+#
+# def refined(s):
+#     return re.sub(r'\D+', '', s)
+#
+#
+# def write_csv(data):
+#     with open('plugins.csv', 'a') as f:
+#         writer = csv.writer(f, delimiter=";", lineterminator="\r")
+#
+#         writer.writerow((data['name'], data['url'], data['rating']))
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.find_all("section", class_="plugin-section")[3]
+#     plugins = p1.find_all('article')
+#     for plugin in plugins:
+#         name = plugin.find("h3").text
+#         url = plugin.find("h3").find("a").get('href')  # ["href"]
+#         rating = plugin.find("span", class_="rating-count").find("a").text
+#         r = refined(rating)
+#
+#         data = {'name': name, 'url': url, 'rating': r}
+#         write_csv(data)
+#
+#
+# def main():
+#     url = "https://ru.wordpress.org/plugins/"
+#     get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+
+# import requests
+# from bs4 import BeautifulSoup
+# import csv
+#
+#
+# def refine_cy(s):
+#     return s.split()[-1]
+#
+#
+# def write_csv(data):
+#     with open("plagins1.csv", 'a') as f:
+#         writer = csv.writer(f, delimiter=";", lineterminator="\r")
+#         writer.writerow((data['name'], data['url'], data['snippet'], data['active'], data['cy']))
+#
+#
+# def get_html(url):
+#     res = requests.get(url)
+#     return res.text
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.findAll("article", class_="plugin-card")
+#     for el in p1:
+#         try:
+#             name = el.find('h3').text
+#         except ValueError:
+#             name = ""
+#
+#         try:
+#             url = el.find('h3').find("a")["href"]
+#         except ValueError:
+#             url = ""
+#
+#         try:
+#             snippet = el.find('div', class_="entry-excerpt").find('p').text
+#         except ValueError:
+#             snippet = ""
+#
+#         try:
+#             active = el.find('span', class_="active-installs").text.strip()
+#         except ValueError:
+#             active = ""
+#
+#         try:
+#             c = el.find('span', class_="tested-with").text.strip()
+#             cy = refine_cy(c)
+#         except ValueError:
+#             cy = ""
+#
+#         data = {
+#             'name': name,
+#             'url': url,
+#             'snippet': snippet,
+#             'active': active,
+#             'cy': cy,
+#         }
+#         write_csv(data)
+#
+#
+# def main():
+#     for i in range(2, 5):
+#         url = f"https://ru.wordpress.org/plugins/browse/blocks/page/{i}/"
+#         get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
+# from parsers import Parser
+#
+#
+# def main():
+#     pars = Parser("https://www.ixbt.com/live/index/news/", "news.txt")
+#     pars.run()
+#
+#
+# if __name__ == '__main__':
+#     main()
 
 
 import requests
+from bs4 import BeautifulSoup
+import csv
+
+
+def get_html(url):
+    res = requests.get(url)
+    return res.text
+
+
+def write_csv(data):
+    with open('games.csv', 'a') as f:
+        writer = csv.writer(f, delimiter=";", lineterminator="\r")
+
+        writer.writerow((data['name'], data['opr'], data['avto'], data['numb']))
+
+
+def get_data(html):
+    soup = BeautifulSoup(html, "lxml")
+    p1 = soup.find("section", id="catalog-content")
+    ob = p1.find_all('article', class_="_card_8sstg_1 _card--autoheight-mobile_8sstg_388")
+    for plugin in ob:
+        name = plugin.find("section", class_="_card__content_8sstg_390").find("a").text
+        opr = plugin.find("span", class_="_card__subtitle_8sstg_1").text
+        avto = plugin.find("a", class_="_card__author_8sstg_171").find("span").text
+        numb = plugin.find("section", class_="_card__info_8sstg_1").text.strip()
+
+        data = {'name': name, 'opr': opr, "avto": avto, "numb": numb}
+        write_csv(data)
+
+
+def main():
+    url = "https://stopgame.ru/review/izumitelno"
+    get_data(get_html(url))
+
+
+if __name__ == '__main__':
+    main()
