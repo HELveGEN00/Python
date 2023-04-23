@@ -381,3 +381,51 @@
 #         def show(self):
 #             print("7, i7, 16")
 #
+
+
+def check_password(password):
+    has_upper = False
+    has_lower = False
+    has_num = False
+    symbol1 = False
+    symbol2 = False
+    symbol3 = False
+
+    for ch in password:
+        if "A" <= ch <= "Z":
+            has_upper = True
+        elif "a" <= ch <= "z":
+            has_lower = True
+        elif "0" <= ch <= "9":
+            has_num = True
+        elif "-" == ch:
+            symbol1 = True
+        elif "@" == ch:
+            symbol2 = True
+        elif "_" == ch:
+            symbol3 = True
+
+    if 8 <= len(password) <= 16 and has_upper and has_lower and has_num and symbol1 and symbol2 and symbol3:
+        return True
+    return False
+
+
+run = True
+# Test : My_p@ssw0rd-
+while run:
+    p = input("Введите пароль:")
+    if check_password(p):
+        print("Надежный пароль! ")
+        run = False
+    else:
+        print("Ненадежный пароль!")
+
+import re
+
+test = "123456@i.ru, 123_456@ru.name.ru,login@i.ru,логин-1@i.ru,login.3@i.ru,login.3-67@i.ru,1login@ru.name.ru"
+pattern = r".+@.+"
+
+if re.search(pattern, test):
+    print(test)
+else:
+    print("not found")

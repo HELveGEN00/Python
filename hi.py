@@ -1657,7 +1657,7 @@ names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill
 #         c = i + j
 #         ft.write(c)
 
-from random import randint
+# from random import randint
 
 
 # s = tuple(2**i for i in range(1,13))
