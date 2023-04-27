@@ -431,76 +431,141 @@
 #     print("not found")
 
 
-class Car:
-    name = "name"
-    year = "0000"
-    manufacturer = "manufacturer"
-    engine_power = "engine_power"
-    car_color = "color"
-    price = "price"
-
-    def info(self):
-        print(" Данные о вашей машине ".center(50, "="))
-        print(f"Название модели:{self.name}\nГод выпуска: {self.year}\n"
-              f"Производитель:{self.manufacturer}\nМощность двигателя:{self.engine_power}\n"
-              f"Цвет машины:{self.car_color}\nЦена:{self.price}\n")
-
-    def input_print(self, name, year, manufacturer, engine_power, car_color, price):
-        self.name = name
-        self.year = year
-        self.manufacturer = manufacturer
-        self.engine_power = engine_power
-        self.car_color = car_color
-        self.price = price
-
-    def set_name(self, name):
-        self.name = name
-
-    def get_name(self):
-        return self.name
-
-    def set_year(self, year):
-        self.year = year
-
-    def get_year(self):
-        return self.year
-
-    def set_manufacturer(self, manufacturer):
-        self.manufacturer = manufacturer
-
-    def get_manufacturer(self):
-        return self.manufacturer
-
-    def set_engine_power(self, engine_power):
-        self.engine_power = engine_power
-
-    def get_engine_power(self):
-        return self.engine_power
-
-    def set_car_color(self, car_color):
-        self.engine_power = car_color
-
-    def get_car_color(self):
-        return self.car_color
-
-    def set_price(self, price):
-        self.price = price
-
-    def get_price(self):
-        return self.price
-
-
-car1 = Car()
-car1.info()
-car1.input_print("X7 M50i", "2021", "BMW", "530 l.s.", "white", "1079000")
-car1.info()
-print(car1.get_car_color())
-print(car1.get_name())
-print(car1.get_year())
-print(car1.get_manufacturer())
-print(car1.get_engine_power())
-print(car1.get_price())
-
-
+# class Car:
+#     name = "name"
+#     year = "0000"
+#     manufacturer = "manufacturer"
+#     engine_power = "engine_power"
+#     car_color = "color"
+#     price = "price"
+#
+#     def info(self):
+#         print(" Данные о вашей машине ".center(50, "="))
+#         print(f"Название модели:{self.name}\nГод выпуска: {self.year}\n"
+#               f"Производитель:{self.manufacturer}\nМощность двигателя:{self.engine_power}\n"
+#               f"Цвет машины:{self.car_color}\nЦена:{self.price}\n")
+#
+#     def input_print(self, name, year, manufacturer, engine_power, car_color, price):
+#         self.name = name
+#         self.year = year
+#         self.manufacturer = manufacturer
+#         self.engine_power = engine_power
+#         self.car_color = car_color
+#         self.price = price
+#
+#     def set_name(self, name):
+#         self.name = name
+#
+#     def get_name(self):
+#         return self.name
+#
+#     def set_year(self, year):
+#         self.year = year
+#
+#     def get_year(self):
+#         return self.year
+#
+#     def set_manufacturer(self, manufacturer):
+#         self.manufacturer = manufacturer
+#
+#     def get_manufacturer(self):
+#         return self.manufacturer
+#
+#     def set_engine_power(self, engine_power):
+#         self.engine_power = engine_power
+#
+#     def get_engine_power(self):
+#         return self.engine_power
+#
+#     def set_car_color(self, car_color):
+#         self.engine_power = car_color
+#
+#     def get_car_color(self):
+#         return self.car_color
+#
+#     def set_price(self, price):
+#         self.price = price
+#
+#     def get_price(self):
+#         return self.price
+#
+#
+# car1 = Car()
+# car1.info()
+# car1.input_print("X7 M50i", "2021", "BMW", "530 l.s.", "white", "1079000")
+# car1.info()
+# print(car1.get_car_color())
+# print(car1.get_name())
+# print(car1.get_year())
+# print(car1.get_manufacturer())
+# print(car1.get_engine_power())
+# print(car1.get_price())
 
 
+#Обмен местам двух строк в файле
+pos1 = int(input('pos1 = '))
+pos2 = int(input('pos2 = '))
+
+if pos2 <= pos1:
+    print("Введите корректные значения(0 и 1)")
+
+f = open('TEST1.txt', 'r')
+L = f.readlines()
+s = L[len(L) - 1]
+length = len(s)
+f_nl = True
+
+if (length > 0) and ((s[length - 1] != '\n')):
+    L[len(L) - 1] += '\n'
+    f_nl = False
+
+f.close()
+s = L[pos1]
+L[pos1] = L[pos2]
+L[pos2] = s
+f = open('TEST1.txt', 'w')
+if f_nl == False:
+    L[len(L) - 1] = L[len(L) - 1][:-1]
+
+for item in L:
+    f.write(item)
+f.close()
+
+#обратная
+f = open('TEST1.txt', 'r')
+L = f.readlines()
+
+s = L[len(L) - 1]
+length = len(s)
+f_nl = True
+
+if length > 0 and s[length - 1] != '\n':
+    L[len(L) - 1] += '\n'
+    f_nl = False
+
+f.close()
+
+L2 = []
+i = 0
+while i < len(L):
+    s = L[len(L) - i - 1]
+    L2 = L2 + [s]
+    i = i + 1
+
+if f_nl == False:
+    L2[len(L) - 1] = L2[len(L) - 1][:-1]
+
+f = open('TEST1.txt', 'w')
+for item in L2:
+    f.write(item)
+f.close()
+
+# кол-во строк и символов
+f1 = open('TEST1.txt', 'r')
+count = 0
+for line in f1.readlines():
+    print(f"Символов в строке: ", len(line))
+    count += 1
+
+print("Количество строк в файле: ", count)
+f1.close()
