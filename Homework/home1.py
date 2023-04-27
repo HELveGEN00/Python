@@ -383,49 +383,124 @@
 #
 
 
-def check_password(password):
-    has_upper = False
-    has_lower = False
-    has_num = False
-    symbol1 = False
-    symbol2 = False
-    symbol3 = False
+# def check_password(password):
+#     has_upper = False
+#     has_lower = False
+#     has_num = False
+#     symbol1 = False
+#     symbol2 = False
+#     symbol3 = False
+#
+#     for ch in password:
+#         if "A" <= ch <= "Z":
+#             has_upper = True
+#         elif "a" <= ch <= "z":
+#             has_lower = True
+#         elif "0" <= ch <= "9":
+#             has_num = True
+#         elif "-" == ch:
+#             symbol1 = True
+#         elif "@" == ch:
+#             symbol2 = True
+#         elif "_" == ch:
+#             symbol3 = True
+#
+#     if 8 <= len(password) <= 16 and has_upper and has_lower and has_num and symbol1 and symbol2 and symbol3:
+#         return True
+#     return False
+#
+#
+# run = True
+# # Test : My_p@ssw0rd-
+# while run:
+#     p = input("Введите пароль:")
+#     if check_password(p):
+#         print("Надежный пароль! ")
+#         run = False
+#     else:
+#         print("Ненадежный пароль!")
+#
+# import re
+#
+# test = "123456@i.ru, 123_456@ru.name.ru,login@i.ru,логин-1@i.ru,login.3@i.ru,login.3-67@i.ru,1login@ru.name.ru"
+# pattern = r".+@.+"
+#
+# if re.search(pattern, test):
+#     print(test)
+# else:
+#     print("not found")
 
-    for ch in password:
-        if "A" <= ch <= "Z":
-            has_upper = True
-        elif "a" <= ch <= "z":
-            has_lower = True
-        elif "0" <= ch <= "9":
-            has_num = True
-        elif "-" == ch:
-            symbol1 = True
-        elif "@" == ch:
-            symbol2 = True
-        elif "_" == ch:
-            symbol3 = True
 
-    if 8 <= len(password) <= 16 and has_upper and has_lower and has_num and symbol1 and symbol2 and symbol3:
-        return True
-    return False
+class Car:
+    name = "name"
+    year = "0000"
+    manufacturer = "manufacturer"
+    engine_power = "engine_power"
+    car_color = "color"
+    price = "price"
+
+    def info(self):
+        print(" Данные о вашей машине ".center(50, "="))
+        print(f"Название модели:{self.name}\nГод выпуска: {self.year}\n"
+              f"Производитель:{self.manufacturer}\nМощность двигателя:{self.engine_power}\n"
+              f"Цвет машины:{self.car_color}\nЦена:{self.price}\n")
+
+    def input_print(self, name, year, manufacturer, engine_power, car_color, price):
+        self.name = name
+        self.year = year
+        self.manufacturer = manufacturer
+        self.engine_power = engine_power
+        self.car_color = car_color
+        self.price = price
+
+    def set_name(self, name):
+        self.name = name
+
+    def get_name(self):
+        return self.name
+
+    def set_year(self, year):
+        self.year = year
+
+    def get_year(self):
+        return self.year
+
+    def set_manufacturer(self, manufacturer):
+        self.manufacturer = manufacturer
+
+    def get_manufacturer(self):
+        return self.manufacturer
+
+    def set_engine_power(self, engine_power):
+        self.engine_power = engine_power
+
+    def get_engine_power(self):
+        return self.engine_power
+
+    def set_car_color(self, car_color):
+        self.engine_power = car_color
+
+    def get_car_color(self):
+        return self.car_color
+
+    def set_price(self, price):
+        self.price = price
+
+    def get_price(self):
+        return self.price
 
 
-run = True
-# Test : My_p@ssw0rd-
-while run:
-    p = input("Введите пароль:")
-    if check_password(p):
-        print("Надежный пароль! ")
-        run = False
-    else:
-        print("Ненадежный пароль!")
+car1 = Car()
+car1.info()
+car1.input_print("X7 M50i", "2021", "BMW", "530 l.s.", "white", "1079000")
+car1.info()
+print(car1.get_car_color())
+print(car1.get_name())
+print(car1.get_year())
+print(car1.get_manufacturer())
+print(car1.get_engine_power())
+print(car1.get_price())
 
-import re
 
-test = "123456@i.ru, 123_456@ru.name.ru,login@i.ru,логин-1@i.ru,login.3@i.ru,login.3-67@i.ru,1login@ru.name.ru"
-pattern = r".+@.+"
 
-if re.search(pattern, test):
-    print(test)
-else:
-    print("not found")
+
