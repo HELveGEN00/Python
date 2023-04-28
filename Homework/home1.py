@@ -570,7 +570,7 @@
 # print("Количество строк в файле: ", count)
 # f1.close()
 
-summm by rekurs method
+# summm by rekurs method#
 a = [2, 3, 3, 4]
 
 
@@ -579,6 +579,7 @@ def decorator(func):
         result = func(*args, **kwargs)
         print("average:", sum(a) / len(a))
         return result
+
     return wrapper()
 
 
@@ -590,7 +591,7 @@ def sum_numbers(numb):
 
 print("Summa", sum_numbers(a))
 
-zamena
+# zamena
 str1 = "Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования."
 result = ""
 for i, c in enumerate(str1):
@@ -611,9 +612,10 @@ for i in range(0, len(s)):
     if i != n:
         res = res + s[i]
 print(res)
-удаление всех вхождений
+#
+
 s = '012345363738494'
 print(s)
 n = str(input("Введите символ:"))
 s2 = s.replace(n, '')
-print("Удаление всех",n,":", s2)
+print("Удаление всех", n, ":", s2)
