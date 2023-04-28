@@ -1441,7 +1441,7 @@ import os
 #
 # print(to_str(254, 8))
 
-names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill"], "Ann"]
+# names = ["Adam", ["Bob", ["Chet", "Cat"], "Bard", "Bert"], "Alex", ["Bea", "Bill"], "Ann"]
 
 # print(len(names))
 # print(names[0])

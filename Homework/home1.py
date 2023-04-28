@@ -502,70 +502,118 @@
 # print(car1.get_price())
 
 
-#Обмен местам двух строк в файле
-pos1 = int(input('pos1 = '))
-pos2 = int(input('pos2 = '))
+# Обмен местам двух строк в файле
+# pos1 = int(input('pos1 = '))
+# pos2 = int(input('pos2 = '))
+#
+# if pos2 <= pos1:
+#     print("Введите корректные значения(0 и 1)")
+#
+# f = open('TEST1.txt', 'r')
+# L = f.readlines()
+# s = L[len(L) - 1]
+# length = len(s)
+# f_nl = True
+#
+# if (length > 0) and ((s[length - 1] != '\n')):
+#     L[len(L) - 1] += '\n'
+#     f_nl = False
+#
+# f.close()
+# s = L[pos1]
+# L[pos1] = L[pos2]
+# L[pos2] = s
+# f = open('TEST1.txt', 'w')
+# if f_nl == False:
+#     L[len(L) - 1] = L[len(L) - 1][:-1]
+#
+# for item in L:
+#     f.write(item)
+# f.close()
+#
+# #обратная
+# f = open('TEST1.txt', 'r')
+# L = f.readlines()
+#
+# s = L[len(L) - 1]
+# length = len(s)
+# f_nl = True
+#
+# if length > 0 and s[length - 1] != '\n':
+#     L[len(L) - 1] += '\n'
+#     f_nl = False
+#
+# f.close()
+#
+# L2 = []
+# i = 0
+# while i < len(L):
+#     s = L[len(L) - i - 1]
+#     L2 = L2 + [s]
+#     i = i + 1
+#
+# if f_nl == False:
+#     L2[len(L) - 1] = L2[len(L) - 1][:-1]
+#
+# f = open('TEST1.txt', 'w')
+# for item in L2:
+#     f.write(item)
+# f.close()
+#
+# # кол-во строк и символов
+# f1 = open('TEST1.txt', 'r')
+# count = 0
+# for line in f1.readlines():
+#     print(f"Символов в строке: ", len(line))
+#     count += 1
+#
+# print("Количество строк в файле: ", count)
+# f1.close()
 
-if pos2 <= pos1:
-    print("Введите корректные значения(0 и 1)")
+summm by rekurs method
+a = [2, 3, 3, 4]
 
-f = open('TEST1.txt', 'r')
-L = f.readlines()
-s = L[len(L) - 1]
-length = len(s)
-f_nl = True
 
-if (length > 0) and ((s[length - 1] != '\n')):
-    L[len(L) - 1] += '\n'
-    f_nl = False
+def decorator(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        print("average:", sum(a) / len(a))
+        return result
+    return wrapper()
 
-f.close()
-s = L[pos1]
-L[pos1] = L[pos2]
-L[pos2] = s
-f = open('TEST1.txt', 'w')
-if f_nl == False:
-    L[len(L) - 1] = L[len(L) - 1][:-1]
 
-for item in L:
-    f.write(item)
-f.close()
+@decorator
+def sum_numbers(numb):
+    numb = sum(numb)
+    return numb
 
-#обратная
-f = open('TEST1.txt', 'r')
-L = f.readlines()
 
-s = L[len(L) - 1]
-length = len(s)
-f_nl = True
+print("Summa", sum_numbers(a))
 
-if length > 0 and s[length - 1] != '\n':
-    L[len(L) - 1] += '\n'
-    f_nl = False
+zamena
+str1 = "Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования."
+result = ""
+for i, c in enumerate(str1):
+    if i % 2 == 1:
+        result += c
+    else:
+        if c == "N":
+            c = "P"
+        result += c
 
-f.close()
-
-L2 = []
-i = 0
-while i < len(L):
-    s = L[len(L) - i - 1]
-    L2 = L2 + [s]
-    i = i + 1
-
-if f_nl == False:
-    L2[len(L) - 1] = L2[len(L) - 1][:-1]
-
-f = open('TEST1.txt', 'w')
-for item in L2:
-    f.write(item)
-f.close()
-
-# кол-во строк и символов
-f1 = open('TEST1.txt', 'r')
-count = 0
-for line in f1.readlines():
-    print(f"Символов в строке: ", len(line))
-    count += 1
-
-print("Количество строк в файле: ", count)
-f1.close()
+print(result)
+# del
+s = '0123456789'
+print(s)
+n = int(input("Введите индекс:"))
+res = ''
+for i in range(0, len(s)):
+    if i != n:
+        res = res + s[i]
+print(res)
+удаление всех вхождений
+s = '012345363738494'
+print(s)
+n = str(input("Введите символ:"))
+s2 = s.replace(n, '')
+print("Удаление всех",n,":", s2)
