@@ -621,58 +621,83 @@
 # print("Удаление всех", n, ":", s2)
 
 # 1s
-def parallep(a, b, c):
-    def inner(it, jt):
-        return it * jt
+# def parallep(a, b, c):
+#     def inner(it, jt):
+#         return it * jt
+#
+#     res = 2 * (inner(a, b) + inner(a, c) + inner(b, c))
+#     return res
+#
+#
+# print(f"First option")
+# print(parallep(2, 4, 6))
+# print(parallep(5, 8, 2))
+# print(parallep(1, 6, 8))
+#
+# # 2s
+# res = 0
+#
+#
+# def parallep(a, b, c):
+#     def inner(it, jt):
+#         return it * jt
+#
+#     global res
+#     res = 2 * (inner(a, b) + inner(a, c) + inner(b, c))
+#     return res
+#
+#
+# print(f"Second option")
+# parallep(2, 4, 6)
+# print(res)
+# parallep(5, 8, 2)
+# print(res)
+# parallep(1, 6, 8)
+# print(res)
+#
+#
+# # 3s
+#
+#
+# def parallep(a, b, c):
+#     res = 0
+#
+#     def inner(it, jt):
+#         nonlocal res
+#         res += it * jt
+#
+#     inner(a, b)
+#     inner(a, c)
+#     inner(b, c)
+#     return res * 2
+#
+#
+# print(f"Thrid option")
+# print(parallep(2, 4, 6))
+# print(parallep(5, 8, 2))
+# print(parallep(1, 6, 8))
 
-    res = 2 * (inner(a, b) + inner(a, c) + inner(b, c))
-    return res
+# os
+# import os
+#
+# path = r'C:\Proga\PYTHON'
+# print(f" Сканирование директории ".center(50, "_"), "\n", os.listdir(path))
+#
+# if os.path.isdir(r'C:\Proga\PYTHON'):
+#     print('Name:', os.path.dirname(), ' , file,  ', os.path.getsize(os.path.dirname()))
+
+import os
+
+print(f" Сканирование директории ".center(50, "_"))
 
 
-print(f"First option")
-print(parallep(2, 4, 6))
-print(parallep(5, 8, 2))
-print(parallep(1, 6, 8))
-
-# 2s
-res = 0
+def files(path):
+    for file in os.listdir(path):
+        if os.path.isfile(os.path.join(path, file)):
+            yield file
 
 
-def parallep(a, b, c):
-    def inner(it, jt):
-        return it * jt
+for file in files("."):
+    if os.path.isfile:
+        print('Name:', file, "file ", os.path.getsize(file))
 
-    global res
-    res = 2 * (inner(a, b) + inner(a, c) + inner(b, c))
-    return res
-
-
-print(f"Second option")
-parallep(2, 4, 6)
-print(res)
-parallep(5, 8, 2)
-print(res)
-parallep(1, 6, 8)
-print(res)
-
-
-# 3s
-
-
-def parallep(a, b, c):
-    res = 0
-
-    def inner(it, jt):
-        nonlocal res
-        res += it * jt
-
-    inner(a, b)
-    inner(a, c)
-    inner(b, c)
-    return res * 2
-
-
-print(f"Thrid option")
-print(parallep(2, 4, 6))
-print(parallep(5, 8, 2))
-print(parallep(1, 6, 8))
