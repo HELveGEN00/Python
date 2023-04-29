@@ -570,52 +570,109 @@
 # print("Количество строк в файле: ", count)
 # f1.close()
 
-# summm by rekurs method#
-a = [2, 3, 3, 4]
-
-
-def decorator(func):
-    def wrapper(*args, **kwargs):
-        result = func(*args, **kwargs)
-        print("average:", sum(a) / len(a))
-        return result
-
-    return wrapper()
-
-
-@decorator
-def sum_numbers(numb):
-    numb = sum(numb)
-    return numb
-
-
-print("Summa", sum_numbers(a))
-
-# zamena
-str1 = "Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования."
-result = ""
-for i, c in enumerate(str1):
-    if i % 2 == 1:
-        result += c
-    else:
-        if c == "N":
-            c = "P"
-        result += c
-
-print(result)
-# del
-s = '0123456789'
-print(s)
-n = int(input("Введите индекс:"))
-res = ''
-for i in range(0, len(s)):
-    if i != n:
-        res = res + s[i]
-print(res)
+# # summm by rekurs method#
+# a = [2, 3, 3, 4]
 #
+#
+# def decorator(func):
+#     def wrapper(*args, **kwargs):
+#         result = func(*args, **kwargs)
+#         print("average:", sum(a) / len(a))
+#         return result
+#
+#     return wrapper()
+#
+#
+# @decorator
+# def sum_numbers(numb):
+#     numb = sum(numb)
+#     return numb
+#
+#
+# print("Summa", sum_numbers(a))
+#
+# # zamena
+# str1 = "Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования."
+# result = ""
+# for i, c in enumerate(str1):
+#     if i % 2 == 1:
+#         result += c
+#     else:
+#         if c == "N":
+#             c = "P"
+#         result += c
+#
+# print(result)
+# # del
+# s = '0123456789'
+# print(s)
+# n = int(input("Введите индекс:"))
+# res = ''
+# for i in range(0, len(s)):
+#     if i != n:
+#         res = res + s[i]
+# print(res)
+# #
+#
+# s = '012345363738494'
+# print(s)
+# n = str(input("Введите символ:"))
+# s2 = s.replace(n, '')
+# print("Удаление всех", n, ":", s2)
 
-s = '012345363738494'
-print(s)
-n = str(input("Введите символ:"))
-s2 = s.replace(n, '')
-print("Удаление всех", n, ":", s2)
+# 1s
+def parallep(a, b, c):
+    def inner(it, jt):
+        return it * jt
+
+    res = 2 * (inner(a, b) + inner(a, c) + inner(b, c))
+    return res
+
+
+print(f"First option")
+print(parallep(2, 4, 6))
+print(parallep(5, 8, 2))
+print(parallep(1, 6, 8))
+
+# 2s
+res = 0
+
+
+def parallep(a, b, c):
+    def inner(it, jt):
+        return it * jt
+
+    global res
+    res = 2 * (inner(a, b) + inner(a, c) + inner(b, c))
+    return res
+
+
+print(f"Second option")
+parallep(2, 4, 6)
+print(res)
+parallep(5, 8, 2)
+print(res)
+parallep(1, 6, 8)
+print(res)
+
+
+# 3s
+
+
+def parallep(a, b, c):
+    res = 0
+
+    def inner(it, jt):
+        nonlocal res
+        res += it * jt
+
+    inner(a, b)
+    inner(a, c)
+    inner(b, c)
+    return res * 2
+
+
+print(f"Thrid option")
+print(parallep(2, 4, 6))
+print(parallep(5, 8, 2))
+print(parallep(1, 6, 8))
