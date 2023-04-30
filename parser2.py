@@ -11,8 +11,8 @@ class Parser:
         self.path = path
 
     def get_html(self):
-        req = requests.get(self.url).text
-        self.html = BeautifulSoup(req, 'lxml')
+            req = requests.get(self.url).text
+            self.html = BeautifulSoup(req, 'lxml')
 
     def parsing(self):
         p1 = self.html.find("section", id="catalog-content")
@@ -35,7 +35,7 @@ class Parser:
             i = 1
             for item in self.res:
                 f.write(
-                    f"Новость № {i}\n\nНазвание: {item['name']}\nСсылка: {item['opr']}\nАвтор: {item['avto']}"
+                    f"Новость № {i}\n\nНазвание: {item['name']}\nОписание: {item['opr']}\nАвтор: {item['avto']}"
                     f"\nДата/Отзывы:{item['numb']}\n"
                     f"\n\n{'*' * 20}\n")
                 i += 1

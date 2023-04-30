@@ -35,6 +35,6 @@ class Controller:
             except KeyError:
                 self.user_interface.show_incorrect_title_error(article_title)
         elif answer == "q":
-            pass
+            self.article_model.save_data()
         else:
             self.user_interface.show_incorrect_answer_error(answer)
