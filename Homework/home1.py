@@ -686,18 +686,19 @@
 # if os.path.isdir(r'C:\Proga\PYTHON'):
 #     print('Name:', os.path.dirname(), ' , file,  ', os.path.getsize(os.path.dirname()))
 
-import os
-
-print(f" Сканирование директории ".center(50, "_"))
-
-
-def files(path):
-    for file in os.listdir(path):
-        if os.path.isfile(os.path.join(path, file)):
-            yield file
-
-
-for file in files("."):
-    if os.path.isfile:
-        print('Name:', file, "file ", os.path.getsize(file))
+# import os
+#
+# print(f" Сканирование директории ".center(50, "_"))
+#
+#
+# def files(path):
+#     for file in os.listdir(path):
+#         if os.path.isfile(os.path.join(path, file)):
+#             yield file
+#
+#
+# for file in files("."):
+#     if os.path.isfile:
+#         print('Name:', file, "file ", os.path.getsize(file))
+#
 
